@@ -7,7 +7,7 @@
     <title>Happy Birthday My Love</title>
     <!-- Importing modern minimal fonts and a beautiful cursive font for romance -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap&subset=vietnamese"
         rel="stylesheet">
     <style>
         /* Base Reset */
@@ -16,6 +16,8 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* openHeartPage removed to avoid opening heart drawing from modal */
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -304,6 +306,7 @@
             text-shadow: 0 2px 15px rgba(255, 179, 198, 0.6);
             background: -webkit-linear-gradient(45deg, #ff9a9e, #fecfef);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
@@ -412,16 +415,17 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 50px 40px;
-            border-radius: 25px;
-            max-width: 550px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 40px 30px;
+            border-radius: 30px;
+            max-width: 620px;
             width: 100%;
-            text-align: center;
+            max-height: 85vh;
+            text-align: left;
             transform: translateY(60px) scale(0.9);
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
             position: relative;
             overflow: hidden;
         }
@@ -452,22 +456,44 @@
 
         .modal-content h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: #ffb3c6;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             background: -webkit-linear-gradient(45deg, #fff, #ffb3c6);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-align: center;
         }
 
-        .modal-content p {
-            font-size: 1.25rem;
+        .modal-content .letter-text {
+            max-height: 62vh;
+            overflow: auto;
+            padding-right: 10px;
+            margin-bottom: 25px;
+        }
+
+        .modal-content .letter-text p {
+            font-size: 1.1rem;
             line-height: 1.9;
-            margin-bottom: 35px;
+            margin-bottom: 1.2rem;
             color: rgba(255, 255, 255, 0.95);
             font-family: 'Playfair Display', serif;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+        }
+
+        .modal-content .letter-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-content .letter-signature {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-family: 'Outfit', sans-serif;
+            font-style: italic;
+            text-align: right;
+            margin-top: 10px;
         }
 
         .btn-close {
@@ -487,6 +513,25 @@
             background: rgba(255, 255, 255, 0.15);
             border-color: #fff;
             transform: translateY(-2px);
+        }
+
+        /* .btn-open-heart removed */
+
+        @keyframes cardGlow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+            }
+
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 35px 100px rgba(255, 105, 180, 0.7);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+            }
         }
 
         /* Gift opening animations */
@@ -884,16 +929,22 @@
 
         <!-- Hidden Romantic Birthday Card -->
         <div class="glass-card" id="birthdayCard">
-            <img src="aditi.jpg" alt="Our Love" class="card-img">
-
-            <h1>Happy Birthday, Aditi!</h1>
+            <h1>Happy Birthday, my lover!</h1>
             <p class="subtitle">To the absolute love of my life ❤️</p>
 
             <div class="slideshow-container">
-                <div class="slide-text active">"Happy Birthday to my favorite person."</div>
-                <div class="slide-text">"Every moment with you feels like magic."</div>
-                <div class="slide-text">"You make my world so incredibly beautiful."</div>
-                <div class="slide-text">"I fall in love with you more every single day."</div>
+                <div class="slide-text active">I love you</div>
+                <div class="slide-text">Je t'aime</div>
+                <div class="slide-text">Te amo</div>
+                <div class="slide-text">Ich liebe dich</div>
+                <div class="slide-text">Ti amo</div>
+                <div class="slide-text">Te quiero</div>
+                <div class="slide-text">사랑해요</div>
+                <div class="slide-text">愛してる</div>
+                <div class="slide-text">Eu te amo</div>
+                <div class="slide-text">Я тебя люблю</div>
+                <div class="slide-text">मैं तुमसे प्यार करता हूँ</div>
+                <div class="slide-text">Mahal kita</div>
             </div>
 
             <button class="btn-interactive" onclick="openMessageModal()">Read My Heart</button>
@@ -904,18 +955,17 @@
     <!-- Hidden Deep Emotional Message Modal -->
     <div class="modal-overlay" id="messageModal">
         <div class="modal-content">
-            <h2>My Dearest,</h2>
-            <p>
-                On your special day, I want you to know just how incredibly deeply I love you.
-                You are my greatest blessing, my safest place, and my favorite adventure.
-                I cherish every smile, every laugh, and every quiet moment we share.
-                <br><br>
-                May this year bring you as much joy, peace, and endless happiness as you
-                bring into my life every single day. I'll always be here to hold your hand
-                through it all.
-                <br><br>
-                Happy Birthday, darling. I love you to the moon and back.
-            </p>
+            <h2>Chào anh – Yêu dấu của em ❤️</h2>
+            <div class="letter-text">
+                <p>Yêu của em ơi, tại bbi không cho em tặng quà nên em đành chuẩn bị cho anh một chút bất ngờ nho nhỏ. Hy vọng anh sẽ thích nhé. 💕</p>
+                <p>Em mong sinh nhật năm nay sẽ là một ngày thật đặc biệt của anh, bởi vì năm nay anh đã có em rồiii nè. Chúc anh luôn thật vui vẻ, bình an và chẳng phải muộn phiền vì điều gì. Em cũng mong thế giới sẽ dịu dàng với người em yêu thêm một chút, để mỗi ngày của anh đều nhẹ nhàng và hạnh phúc hơn.</p>
+                <p>Dù sau này có chuyện gì xảy ra đi nữa, em chỉ mong chúng mình vẫn sẽ luôn nắm tay nhau và đi cùng nhau thật lâu anh nhóo. Em mong rằng yêu của em sẽ luôn cảm nhận được sự ấm áp và tin vào hạnh phúc thêm một lần nữa nhưng lần này là với em nhaa.</p>
+                <p>Cảm ơn anh vì đã luôn dịu dàng, kiên nhẫn và yêu thương em nhiều đến vậy. Em thật sự hy vọng this will last forever, vì em muốn mình sẽ còn cùng nhau đón thật nhiều mùa sinh nhật nữa.</p>
+                <p>Em biết khoảng thời gian này em chưa thể ở cạnh anh, nhưng bbi đợi em nhé. Em sẽ bù đắp thật nhiều iu thương cho yêu của em.</p>
+                <p>Cảm ơn anh vì đã đến với thế giới này, để em có cơ hội gặp anh, yêu anh và được anh yêu. Cảm ơn chòng vì đã chọn em, và vì cuối cùng chúng mình đã chọn nhau.</p>
+                <p>Happy Birthday, my love. 🤍</p>
+                <p class="letter-signature">Mãi yêu anh.<br>Your baby boo 💕</p>
+            </div>
             <button class="btn-close" onclick="closeMessageModal()">Close Message</button>
         </div>
     </div>
